@@ -80,28 +80,12 @@ class Server:
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """Deletion-resilient hypermedia pagination"""
-        assert index is None or (isinstance(index, int) and 0 <= index < len(self.dataset())), "Invalid index"
-        assert isinstance(page_size, int) and page_size > 0, "Invalid page_size"
-
-        dataset = self.indexed_dataset()
-
-        if index is None:
-            index = 0
-        start_index = index
-        end_index = start_index + page_size
-
-        # If end_index exceeds the length of the dataset, adjust it
-        if end_index > len(dataset):
-            end_index = len(dataset)
-
-        data = [dataset[i] for i in range(start_index, end_index)]
-
-        # Calculate next_index
-        next_index = end_index
+        assert isinstance(index, int) and index >= 0
+        assert isinstance(page_size, int) and page_size > 0
 
         return {
-            "index": start_index,
-            "next_index": next_index,
-            "page_size": page_size,
-            "data": data
-        }
+                'index': index,
+                'next_index': index + page_size,
+                'page_size': page_size,
+                'data': self.__dataset[index: index + page_size]
+                }
