@@ -50,6 +50,8 @@ class Server:
         # Check if start_index is out of range
         if start_index >= len(dataset) or start_index < 0:
             return []
+        if end_index >= len(dataset) or end_index < 0:
+            return []
 
         # Return the appropriate page of the dataset
         return dataset[start_index:end_index + 1]
