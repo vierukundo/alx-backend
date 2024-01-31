@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""Imports"""
+"""module for basic cache"""
 
 
 BaseCaching = __import__('base_caching').BaseCaching
 
 
+
 class BasicCache(BaseCaching):
     """inherits from BaseCaching and is a caching system"""
+
     def __init__(self):
         """Initialization"""
         super().__init__()
