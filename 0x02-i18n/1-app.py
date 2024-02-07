@@ -16,16 +16,7 @@ app.config.from_object(Config)
 babel = Babel(app)
 
 
-@babel.localeselector
-def get_locale():
-    """Retrieves Babel Locale"""
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
-
 @app.route('/')
 def index():
     """Route that displays title and header"""
     return render_template('1-index.html')
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
