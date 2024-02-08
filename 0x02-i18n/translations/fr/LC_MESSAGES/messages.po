@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-02-08 20:39+0000\n"
-"PO-Revision-Date: 2024-02-08 20:12+0000\n"
+"POT-Creation-Date: 2024-02-08 21:01+0000\n"
+"PO-Revision-Date: 2024-02-08 21:02+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
 "Language-Team: fr <LL@li.org>\n"
@@ -32,10 +32,6 @@ msgid "You are logged in as %(username)s."
 msgstr "Vous êtes connecté en tant que %(username)s."
 
 #: templates/5-index.html:13
-#, fuzzy
 msgid "You are not logged in."
 msgstr "Vous n'êtes pas connecté."
-
-#~ msgid "logged_in_as"
-#~ msgstr "Vous êtes connecté en tant que %(username)s."
 

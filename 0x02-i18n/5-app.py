@@ -24,25 +24,27 @@ users = {
 }
 
 
-def get_user(user_id):
+def get_user():
     """returns a user dictionary or None if the ID cannot
     be found or if login_as was not passed."""
-    return users.get(user_id, None)
+    if 'login_as' in request.args:
+        user_id = request.args.get('login_as')
+    return users.get(int(user_id), None)
 
 
 @app.before_request
 def before_request():
     """Get user if any, and set it as a global on flask.g.user"""
-    if 'login_as' in request.args:
-        user_id = request.args.get('login_as')
-        g.user = get_user(int(user_id))
+    g.user = get_user()
 
 
 @babel.localeselector
 def get_locale():
     """Retrieves Babel Locale"""
-    if g.user and 'locale' in g.user:
-        return g.user['locale']
+    if 'locale' in request.args:
+        requested_locale = request.args.get('locale')
+        if requested_locale in app.config['LANGUAGES']:
+            return requested_locale
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
