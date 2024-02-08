@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-02-08 20:11+0000\n"
+"POT-Creation-Date: 2024-02-08 20:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,10 +26,11 @@ msgid "home_header"
 msgstr ""
 
 #: templates/5-index.html:11
-msgid "logged_in_as"
+#, python-format
+msgid "You are logged in as %(username)s."
 msgstr ""
 
 #: templates/5-index.html:13
-msgid "not_logged_in"
+msgid "You are not logged in."
 msgstr ""
 
