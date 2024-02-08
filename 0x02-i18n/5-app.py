@@ -29,13 +29,16 @@ def get_user():
     be found or if login_as was not passed."""
     if 'login_as' in request.args:
         user_id = request.args.get('login_as')
-    return users.get(int(user_id), None)
+        print(int(user_id))
+        return users.get(int(user_id))
+    return None
 
 
 @app.before_request
 def before_request():
     """Get user if any, and set it as a global on flask.g.user"""
     g.user = get_user()
+    print(g.user)
 
 
 @babel.localeselector
@@ -51,7 +54,7 @@ def get_locale():
 @app.route('/')
 def index():
     """Route that displays title and header"""
-    return render_template('5-index.html')
+    return render_template('5-index.html', user=g.user)
 
 
 if __name__ == '__main__':
