@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Flask app module"""
 from flask import Flask, render_template, request, g
-from flask_babel import Babel
+from flask_babel import Babel, format_datetime
 import pytz
 from datetime import datetime
 
@@ -84,7 +84,7 @@ def get_timezone():
 def index():
     """Route that displays title and header"""
     current_time = datetime.now(pytz.timezone(get_timezone()))
-    formatted_time = current_time.strftime("%b %d, %Y, %I:%M:%S %p")
+    formatted_time = format_datetime(current_time, format='medium')
     return render_template(
             'index.html', user=g.user, current_time=formatted_time)
 
