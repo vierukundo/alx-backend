@@ -86,7 +86,7 @@ def index():
     current_time = datetime.now(pytz.timezone(get_timezone()))
     formatted_time = current_time.strftime("%b %d, %Y, %I:%M:%S %p")
     return render_template(
-            '6-index.html', user=g.user, current_time=formatted_time)
+            'index.html', user=g.user, current_time=formatted_time)
 
 
 if __name__ == '__main__':
