@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-02-09 00:21+0000\n"
+"POT-Creation-Date: 2024-02-09 00:23+0000\n"
 "PO-Revision-Date: 2024-02-08 21:02+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -42,5 +42,5 @@ msgstr "Vous n'êtes pas connecté."
 #: templates/index.html:13
 #, python-format
 msgid "The current time is %(current_time)s."
-msgstr ""
+msgstr "Nous sommes le %(current_time)s."
 
