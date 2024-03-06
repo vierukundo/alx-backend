@@ -3,8 +3,8 @@ const queue = kue.createQueue();
 
 // Object containing job data
 const jobData = {
-  phoneNumber: '1234567890',
-  message: 'Hello, this is a notification!',
+  phoneNumber: '4153518780',
+  message: 'This is the code to verify your account',
 };
 
 // Create a job and push it to the queue
@@ -19,11 +19,9 @@ const notificationJob = queue.create('push_notification_code', jobData).save((er
 // Event handler when the job completes
 notificationJob.on('complete', () => {
   console.log('Notification job completed');
-  kue.app.close();
 });
 
 // Event handler when the job fails
 notificationJob.on('failed', (errorMessage) => {
   console.error('Notification job failed:', errorMessage);
-  kue.app.close();
 });
